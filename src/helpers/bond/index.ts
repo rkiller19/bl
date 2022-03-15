@@ -3,11 +3,11 @@ import { LPBond, CustomLPBond } from "./lp-bond";
 import { StableBond, CustomBond } from "./stable-bond";
 
 import MimIcon from "../../assets/tokens/MIM.svg";
-import AvaxIcon from "../../assets/tokens/AVAX.svg";
+import AVAXIcon from "../../assets/tokens/AVAX.svg";
 import MimTimeIcon from "../../assets/tokens/TIME-MIM.svg";
-import AvaxTimeIcon from "../../assets/tokens/TIME-AVAX.svg";
+import AVAXTimeIcon from "../../assets/tokens/TIME-AVAX.svg";
 
-import { StableBondContract, LpBondContract, WavaxBondContract, StableReserveContract, LpReserveContract } from "../../abi";
+import { StableBondContract, LpBondContract, WAVAXBondContract, StableReserveContract, LpReserveContract } from "../../abi";
 
 export const mim = new StableBond({
     name: "mim",
@@ -25,12 +25,12 @@ export const mim = new StableBond({
     tokensInStrategy: "60500000000000000000000000",
 });
 
-export const wavax = new CustomBond({
-    name: "wavax",
+export const wAVAX = new CustomBond({
+    name: "wAVAX",
     displayName: "wAVAX",
     bondToken: "AVAX",
-    bondIconSvg: AvaxIcon,
-    bondContractABI: WavaxBondContract,
+    bondIconSvg: AVAXIcon,
+    bondContractABI: WAVAXBondContract,
     reserveContractAbi: StableReserveContract,
     networkAddrs: {
         [Networks.AVAX]: {
@@ -57,11 +57,11 @@ export const mimTime = new LPBond({
     lpUrl: "https://www.traderjoexyz.com/#/pool/0x130966628846BFd36ff31a822705796e8cb8C18D/0xb54f16fB19478766A268F172C9480f8da1a7c9C3",
 });
 
-export const avaxTime = new CustomLPBond({
-    name: "avax_time_lp",
+export const AVAXTime = new CustomLPBond({
+    name: "AVAX_time_lp",
     displayName: "TIME-AVAX LP",
     bondToken: "AVAX",
-    bondIconSvg: AvaxTimeIcon,
+    bondIconSvg: AVAXTimeIcon,
     bondContractABI: LpBondContract,
     reserveContractAbi: LpReserveContract,
     networkAddrs: {
@@ -73,4 +73,4 @@ export const avaxTime = new CustomLPBond({
     lpUrl: "https://www.traderjoexyz.com/#/pool/AVAX/0xb54f16fB19478766A268F172C9480f8da1a7c9C3",
 });
 
-export default [mim, wavax, mimTime, avaxTime];
+export default [mim, wAVAX, mimTime, AVAXTime];

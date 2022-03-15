@@ -124,7 +124,7 @@ interface ICalcUserBondDetails {
 export interface IUserBondDetails {
     allowance: number;
     balance: number;
-    avaxBalance: number;
+    AVAXBalance: number;
     interestDue: number;
     bondMaturationBlock: number;
     pendingPayout: number; //Payout formatted in gwei.
@@ -143,7 +143,7 @@ export const calculateUserBondDetails = createAsyncThunk("account/calculateUserB
                 interestDue: 0,
                 bondMaturationBlock: 0,
                 pendingPayout: "",
-                avaxBalance: 0,
+                AVAXBalance: 0,
             });
         });
     }
@@ -165,8 +165,8 @@ export const calculateUserBondDetails = createAsyncThunk("account/calculateUserB
     balance = await reserveContract.balanceOf(address);
     const balanceVal = ethers.utils.formatEther(balance);
 
-    const avaxBalance = await provider.getSigner().getBalance();
-    const avaxVal = ethers.utils.formatEther(avaxBalance);
+    const AVAXBalance = await provider.getSigner().getBalance();
+    const AVAXVal = ethers.utils.formatEther(AVAXBalance);
 
     const pendingPayoutVal = ethers.utils.formatUnits(pendingPayout, "gwei");
 
@@ -177,7 +177,7 @@ export const calculateUserBondDetails = createAsyncThunk("account/calculateUserB
         isLP: bond.isLP,
         allowance: Number(allowance),
         balance: Number(balanceVal),
-        avaxBalance: Number(avaxVal),
+        AVAXBalance: Number(AVAXVal),
         interestDue,
         bondMaturationBlock,
         pendingPayout: Number(pendingPayoutVal),
@@ -194,7 +194,7 @@ interface ICalcUserTokenDetails {
 export interface IUserTokenDetails {
     allowance: number;
     balance: number;
-    isAvax?: boolean;
+    isAVAX?: boolean;
 }
 
 export const calculateUserTokenDetails = createAsyncThunk("account/calculateUserTokenDetails", async ({ address, token, networkID, provider }: ICalcUserTokenDetails) => {
@@ -210,15 +210,15 @@ export const calculateUserTokenDetails = createAsyncThunk("account/calculateUser
         });
     }
 
-    if (token.isAvax) {
-        const avaxBalance = await provider.getSigner().getBalance();
-        const avaxVal = ethers.utils.formatEther(avaxBalance);
+    if (token.isAVAX) {
+        const AVAXBalance = await provider.getSigner().getBalance();
+        const AVAXVal = ethers.utils.formatEther(AVAXBalance);
 
         return {
             token: token.name,
             tokenIcon: token.img,
-            balance: Number(avaxVal),
-            isAvax: true,
+            balance: Number(AVAXVal),
+            isAVAX: true,
         };
     }
 

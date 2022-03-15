@@ -14,8 +14,8 @@ const addChainRequest = () => {
             {
                 chainId: "250",
                 chainName: "Fantom Opera",
-                rpcUrls: [" https://rpc.ftm.tools/"],
-                blockExplorerUrls: ["https://ftmscan.com/"],
+                rpcUrls: [" https://rpc.FTM.tools/"],
+                blockExplorerUrls: ["https://FTMscan.com/"],
                 nativeCurrency: {
                     name: "FTM",
                     symbol: "FTM",
