@@ -84,12 +84,8 @@ function NavContent() {
                     </Link>
 
                     <Link
-                        component={NavLink}
-                        id="bond-nav"
-                        to="/mints"
-                        isActive={(match: any, location: any) => {
-                            return checkPage(location, "mints");
-                        }}
+                        
+                        
                         className={classnames("button-dapp-menu", { active: isActive })}
                     >
                         <div className="dapp-menu-item">
@@ -99,19 +95,8 @@ function NavContent() {
                     </Link>
 
                     <div className="bond-discounts">
-                        <p>Mint discounts</p>
-                        {bonds.map((bond, i) => (
-                            <Link component={NavLink} to={`/mints/${bond.name}`} key={i} className={"bond"}>
-                                {!bond.bondDiscount ? (
-                                    <Skeleton variant="text" width={"150px"} />
-                                ) : (
-                                    <p>
-                                        {bond.displayName}
-                                        <span className="bond-pair-roi">{bond.bondDiscount && trim(bond.bondDiscount * 100, 2)}%</span>
-                                    </p>
-                                )}
-                            </Link>
-                        ))}
+                        <p>Coming Soon</p>
+                       
                     </div>
 
                     <Link
@@ -130,12 +115,9 @@ function NavContent() {
                 </div>
             </div>
             <div className="dapp-menu-doc-link">
-                <Link href="https://wonderland.gitbook.io/wonderland/" target="_blank">
+                <Link href="https://docs.helldaodocs.com/" target="_blank">
                     <img alt="" src={DocsIcon} />
                     <p>Docs</p>
-                </Link>
-                <Link href="https://legacy.wonderland.money/" target="_blank">
-                    <p>Legacy website</p>
                 </Link>
             </div>
             <Social />

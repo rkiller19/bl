@@ -12,13 +12,13 @@ const addChainRequest = () => {
         method: "wallet_addEthereumChain",
         params: [
             {
-                chainId: "0xa86a",
-                chainName: "Avalanche Mainnet",
-                rpcUrls: ["https://api.avax.network/ext/bc/C/rpc"],
-                blockExplorerUrls: ["https://cchain.explorer.avax.network/"],
+                chainId: "250",
+                chainName: "Fantom Opera",
+                rpcUrls: [" https://rpc.ftm.tools/"],
+                blockExplorerUrls: ["https://ftmscan.com/"],
                 nativeCurrency: {
-                    name: "AVAX",
-                    symbol: "AVAX",
+                    name: "FTM",
+                    symbol: "FTM",
                     decimals: 18,
                 },
             },
